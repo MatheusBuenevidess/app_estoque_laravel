@@ -71,4 +71,22 @@ class ProdutoController extends Controller
         $produtos = Produto::all();
         return view('produto.pesquisar')->with('mensagem', $mensagem)->with('produtos', $produtos);
     }
+
+    public function excluir($id)
+    {
+        // Criando um objeto com o id recebido pela rota
+        $produto = Produto::find($id);
+
+        // Excluindo este objeto
+        $produto->delete();
+
+        // Criando uma mensagem para ser enviada a view produto.pesquisar
+        $mensagem = "Produto excluído com sucesso!";
+
+        // Capturando objetos para enviar a view produto.pesquisar
+        $produtos = Produto::all();
+
+        // Retornando a view produto.pesquisar
+        return view('produto.pesquisar')->with('mensagem', $mensagem)->with('produtos', $produtos);
+    }
 }
