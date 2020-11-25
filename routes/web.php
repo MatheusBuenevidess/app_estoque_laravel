@@ -15,6 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Pesquisar
 Route::get('/produtos/pesquisar', 'ProdutoController@pesquisar');
 
 Route::post('/produtos/pesquisar', 'ProdutoController@pesquisar');
+
+
+// Inserir
+Route::get('/produtos/inserir', 'ProdutoController@mostrar_inserir');
+
+Route::post('/produtos/inserir', 'ProdutoController@inserir');
+
+
+//Alterar
+Route::get('/produtos/alterar/{id}', 'ProdutoController@mostrar_alterar');
+
+Route::post('/produtos/alterar', 'ProdutoController@alterar');
