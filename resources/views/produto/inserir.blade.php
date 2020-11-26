@@ -35,6 +35,9 @@
             <div>Os campos marcados com <span class="text-danger">*</span> não podem estar em branco.</div>
             <input type="submit" class="btn btn-success mt-2" value="Inserir">
         </form>
+        @if(!empty($message))
+            <a href="/produtos/pesquisar"><button class="btn btn-info mt-2">Voltar</button></a>
+        @endif
     </div>
 </body>
 </html>

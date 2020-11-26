@@ -28,8 +28,16 @@
                 </form>
             </div>
         </div>
-        
+        @if(!empty($message))
+            <div class="row">
+                <div class="alert alert-warning col-12 text-center" role="alert">
+                    {{ $message }}
+                </div> 
+            </div>
+        @endif 
     </div>
+    
+     
 
     <div class="container">
         <div class="container">
@@ -44,7 +52,7 @@
                         <th>Valor</th>
                         <th>Data de vencimento</th>
                         <th></th>
-                        <th></th>
+                        <th><a href="/produtos/inserir"><button class="btn btn-success">Adicionar</button></a></th>
                     </tr>
                     @foreach ($product as $products)
                         <tr>

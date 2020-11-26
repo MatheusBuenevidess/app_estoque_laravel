@@ -13,6 +13,10 @@ class ProdutoController extends Controller
         // Recebe o conteúdo elemento 'descricao' do formulário
         $search = Input::get('search');
         $field = Input::get('field');
+
+        if(!$field){
+            $field = "id";
+        }  
         
         // Busca produtos com o conteúdo da $descricao
         $products = Produto::where($field, 'like', '%'.$search.'%')->get();
@@ -88,6 +92,6 @@ class ProdutoController extends Controller
         $products = Produto::all();
 
         // Retornando a view produto.pesquisar
-        return view('produto.pesquisar')->with('message', $message)->with('products', $products);
+        return view('produto.pesquisar')->with('message', $message)->with('product', $products);
     }
 }
