@@ -15,7 +15,7 @@
 
     <div class="container">
         <div class="container">
-            @if(count($produtos) == 0)
+            @if(count($product) == 0)
                 <div class="alert alert-danger mt-2">Nenhum produto encontrado com essa descrição!</div>
             @else
                 <table class="table mt-2 text-center">
@@ -26,15 +26,15 @@
                         <th>Valor</th>
                         <th>Data de vencimento</th>
                     </tr>
-                    @foreach ($produtos as $p)
+                    @foreach ($product as $products)
                         <tr>
-                            <td>{{ $p->id }}</td>
-                            <td class="text-left">{{ $p->descricao }}</td>
-                            <td>{{ $p->quantidade }}</td>
-                            <td>{{ $p->valor }}</td>
-                            <td>{{ $p->data_vencimento }}</td>
-                            <td><a href="/produtos/excluir/{{ $p->id }}"><button class="btn btn-danger">Excluir</button></a></td>
-                            <td><a href="/produtos/alterar/{{ $p->id }}"><button class="btn btn-warning">Alterar</button></a></td>
+                            <td>{{ $products->id }}</td>
+                            <td class="text-left">{{ $products->descricao }}</td>
+                            <td>{{ $products->quantidade }}</td>
+                            <td>{{ $products->valor }}</td>
+                            <td>{{ $products->data_vencimento }}</td>
+                            <td><a href="/produtos/excluir/{{ $products->id }}"><button class="btn btn-danger">Excluir</button></a></td>
+                            <td><a href="/produtos/alterar/{{ $products->id }}"><button class="btn btn-warning">Alterar</button></a></td>
                         </tr>
                     @endforeach
                 </table>
@@ -47,8 +47,8 @@
         <form action="/produtos/pesquisar" method="POST" class="form-inline mt-2">
             <input type="hidden" name="_token" value="{{{ csrf_token() }}}">
             <div class="form-group">
-                <label for="descricao">Descrição: </label>
-                <input type="text" id="descricao" name="descricao" class="form-control ml-2">
+                <label for="description">Descrição: </label>
+                <input type="text" id="description" name="description" class="form-control ml-2">
             </div>
             <input type="submit" class="btn btn-primary ml-2" value="Pesquisar">
         </form>
