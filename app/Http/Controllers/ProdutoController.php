@@ -11,10 +11,11 @@ class ProdutoController extends Controller
     public function pesquisar()
     {
         // Recebe o conteúdo elemento 'descricao' do formulário
-        $description = Input::get('description');
+        $search = Input::get('search');
+        $field = Input::get('field');
         
         // Busca produtos com o conteúdo da $descricao
-        $products = Produto::where('descricao', 'like', '%'.$description.'%')->get();
+        $products = Produto::where($field, 'like', '%'.$search.'%')->get();
         
         // Chama a view produto.pesquisar e envia os produtos encontrados
         return view('produto.pesquisar')->with('product', $products);
