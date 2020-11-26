@@ -61,17 +61,5 @@
             @endif
         </div>
     </div>
-
-    {{-- <div class="container">
-	    <h1 class="mt-2">Pesquisa de produtos</h1>
-        <form action="/produtos/pesquisar" method="POST" class="form-inline mt-2">
-            <input type="hidden" name="_token" value="{{{ csrf_token() }}}">
-            <div class="form-group">
-                <label for="description">Descrição: </label>
-                <input type="text" id="description" name="description" class="form-control ml-2">
-            </div>
-            <input type="submit" class="btn btn-primary ml-2" value="Pesquisar">
-        </form>
-    </div> --}}
 </body>
 </html>
